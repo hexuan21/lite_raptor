@@ -139,8 +139,8 @@ if __name__ == "__main__":
     # res_path=f"{res_dir}/hotpotqa_res_bsline_bm25.json"
     # res_path=f"{res_dir}/hotpotqa_res.json"
     # res_path=f"{res_dir}/hotpotqa_res_root_only_start3_1layers.json"
-    # res_path=f"{res_dir}/hotpotqa_res_leaf_only_start0_1layers.json"
-    res_path=f"{res_dir}/hotpotqa_res_hier_start3_4layers.json"
+    res_path=f"{res_dir}/hotpotqa_res_leaf_only_start0_1layers.json"
+    # res_path=f"{res_dir}/hotpotqa_res_hier_start3_4layers.json"
     exact_match_score(res_path)
     f1_score(res_path)
     
@@ -155,6 +155,6 @@ if __name__ == "__main__":
     # dpr                 36.20  50.45
     # raptor (collapsed)  33.60  51.13
     # raptor (root only)  14.80  20.50
-    # raptor (leaf only)  
+    # raptor (leaf only)  39.40  52.17
     # raptor (hier)       22.50  31.44
     # hipporag2           63.00  77.60 
