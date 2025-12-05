@@ -66,7 +66,6 @@ if __name__ == "__main__":
     
     RES_DIR="eval/res"
     TREE_SAVE_PATH = f"eval/tree/{bench}_tree"
-    TREE_SAVE_PATH = "eval_res/hotpotqa_tree_2025-12-05--04:52:38"
     os.makedirs(RES_DIR,exist_ok=True)
     os.makedirs("eval/tree",exist_ok=True)
     
