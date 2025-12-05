@@ -132,14 +132,29 @@ def f1_score(res_path) -> float:
     
     
 if __name__ == "__main__":
-    res_dir="baseline/res"
-    os.makedirs(res_dir,exist_ok=True)
+    res_dir="eval/res"
     
-    res_path=f"{res_dir}/hotpotqa_gpt-5-mini_wo_ctx.json"
+    # res_path=f"{res_dir}/hotpotqa_res_bsline_llm_gpt-4o-mini_wo_ctx.json"
+    # res_path=f"{res_dir}/hotpotqa_res_bsline_dpr.json"
+    # res_path=f"{res_dir}/hotpotqa_res_bsline_bm25.json"
+    # res_path=f"{res_dir}/hotpotqa_res.json"
+    # res_path=f"{res_dir}/hotpotqa_res_root_only_start3_1layers.json"
+    # res_path=f"{res_dir}/hotpotqa_res_leaf_only_start0_1layers.json"
+    res_path=f"{res_dir}/hotpotqa_res_hier_start3_4layers.json"
     exact_match_score(res_path)
     f1_score(res_path)
     
     # use_azure=0
     # judge_model_name="gpt-4o-mini"
     # res_path=f"{res_dir}/hotpotqa_gpt-4o.json"
-    # llm_acc_check(udge_model_name,res_path,use_azure,j)
+    # llm_acc_check(udge_model_name,res_path,use_azure,)
+    
+    # method              em     f1
+    # gpt-4o-mini         20.30  33.01
+    # bm25                35.90  48.90
+    # dpr                 36.20  50.45
+    # raptor (collapsed)  33.60  51.13
+    # raptor (root only)  14.80  20.50
+    # raptor (leaf only)  
+    # raptor (hier)       22.50  31.44
+    # hipporag2           63.00  77.60 

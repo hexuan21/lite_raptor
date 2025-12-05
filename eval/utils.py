@@ -4,6 +4,8 @@ import requests
 
 MAX_TRY=3
 
+HOTPOTQA_PREFIX="You're a helpful chat assistant. \nBased on your knowledge and the context (if provided), answer the question based on your knowledge and the context. Firstly try extracing substring from the context, if it's hard, generate a short answer yourself. \n\nOnly output the short answer to this question, DO NOT include anything else before or after your answer." 
+
 def _llm_azure_api(
     user_prompt,
     model_name,

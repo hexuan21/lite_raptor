@@ -3,7 +3,7 @@ import json
 from tqdm import tqdm
 import argparse
 
-from utils import _llm_azure_api,_llm_openrouter_api,MAX_TRY
+from utils import _llm_azure_api,_llm_openrouter_api,MAX_TRY,HOTPOTQA_PREFIX
 
 
 
@@ -30,7 +30,7 @@ def llm_run_qa(model_name,context_type,use_azure,):
     
     res_list=[] 
     for id,q,a,ctx in tqdm(zip(ids,questions,answers,all_contexts)):
-        prefix="You're a helpful chat assistant. \nBased on your knowledge and the context (if provided), answer the question based on your knowledge and the context. Firstly try extracing substring from the context, if it's hard, generate a short answer yourself. \n\nOnly output the short answer to this question, DO NOT include anything else before or after your answer."
+        prefix=HOTPOTQA_PREFIX
         if context_type=="no_context":
             prompt=prefix+f"\n\nQuestion: {q}. "
         elif context_type=="ten_psg":
@@ -65,11 +65,11 @@ def llm_run_qa(model_name,context_type,use_azure,):
         })
     
     if context_type=="no_context":
-        res_path=f"{res_dir}/hotpotqa_{model_name}_wo_ctx.json"
+        res_path=f"{RES_DIR}/hotpotqa_res_bsline_llm_{model_name}_wo_ctx.json"
     elif context_type=="ten_psg":
-        res_path=f"{res_dir}/hotpotqa_{model_name}.json"
+        res_path=f"{RES_DIR}/hotpotqa_res_bsline_llm_{model_name}.json"
     elif context_type=="all_corpus":
-        res_path=f"{res_dir}/hotpotqa_{model_name}_all_corpus.json"
+        res_path=f"{RES_DIR}/hotpotqa_res_bsline_llm_{model_name}_all_corpus.json"
     else:
         raise ValueError(f"Invalid context_type: {context_type}")
     
@@ -86,17 +86,16 @@ if __name__ == "__main__":
     parser.add_argument('--use_azure',action='store_true')
     args = parser.parse_args()
     
-    CORPUS_PATH = f"eval_data/hotpotqa_corpus.json"
-    EVAL_DATA_PATH="eval_data/hotpotqa.json"
+    CORPUS_PATH = f"data/hotpotqa_corpus.json"
+    EVAL_DATA_PATH="data/hotpotqa_1000.json"
     
-    res_dir="baseline/res"
-    os.makedirs(res_dir,exist_ok=True)
+    RES_DIR="eval/res"
+    os.makedirs(RES_DIR,exist_ok=True)
     
     model_name=args.model_name
     context_type=args.context_type
     use_azure=args.use_azure
     llm_run_qa(model_name,context_type,use_azure,)
     
-    # python baseline/run.py --context_type "ten_psg" --model_name "gpt-4o-mini"
-    # python baseline/run.py --context_type "no_context" --model_name "gpt-4o-mini"
+    # python eval/eval_vanilla_llm.py
     
