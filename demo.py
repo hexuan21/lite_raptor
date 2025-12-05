@@ -13,6 +13,7 @@ answer = RA.answer_question(question=question)
 print("Answer: ", answer)
 
 SAVE_PATH = "demo/cinderella"
+os.makedirs(os.path.dirname(SAVE_PATH),exist_ok=True)
 RA.save(SAVE_PATH)
 
 RA = RetrievalAugmentation(tree=SAVE_PATH)
