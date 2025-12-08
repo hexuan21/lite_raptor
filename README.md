@@ -1,4 +1,4 @@
-## course tech review project
+## Course Porject: Tech Review
 ### Installment
 ```
 conda create -n raptor -y python=3.9
