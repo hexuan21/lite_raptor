@@ -3,7 +3,7 @@ import pickle
 
 from .cluster_tree_builder import ClusterTreeBuilder, ClusterTreeConfig
 from .EmbeddingModels import BaseEmbeddingModel
-from .QAModels import BaseQAModel, GPT3TurboQAModel, GPT4ominiQAModel
+from .QAModels import BaseQAModel, OpenRouter_QAModel
 from .SummarizationModels import BaseSummarizationModel
 from .tree_builder import TreeBuilder, TreeBuilderConfig
 from .tree_retriever import TreeRetriever, TreeRetrieverConfig
@@ -129,7 +129,9 @@ class RetrievalAugmentationConfig:
         # Assign the created configurations to the instance
         self.tree_builder_config = tree_builder_config
         self.tree_retriever_config = tree_retriever_config
-        self.qa_model = qa_model or GPT4ominiQAModel()
+        if qa_model is None:
+            print("using default gpt-4o from OpenRouter")
+        self.qa_model = qa_model or OpenRouter_QAModel(model="gpt-4o")
         self.tree_builder_type = tree_builder_type
 
     def log_config(self):
@@ -290,7 +292,6 @@ class RetrievalAugmentation:
         context, layer_information = self.retrieve(
             question, start_layer, num_layers, top_k, max_tokens, collapse_tree, True
         )
-
         answer = self.qa_model.answer_question(context, question)
 
         if return_layer_information:

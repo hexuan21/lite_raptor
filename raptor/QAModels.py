@@ -2,8 +2,8 @@ import logging
 import os
 
 from openai import OpenAI
-
-
+import json
+import requests
 import getpass
 from abc import ABC, abstractmethod
 
@@ -18,6 +18,91 @@ class BaseQAModel(ABC):
         pass
 
 
+class OpenRouter_QAModel(BaseQAModel):
+    def __init__(self, model="gpt-4o"):
+        """
+        Initializes the GPT-3 model with the specified model version.
+
+        Args:
+            model (str, optional): The GPT-3 model version to use for generating summaries. Defaults to "text-davinci-003".
+        """
+        self.model = model
+        self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"],base_url=os.environ["OPENAI_BASE_URL"])
+
+    @retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6))
+    def _attempt_answer_question(
+        self, context, question, max_tokens=150, stop_sequence=None
+    ):
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": "You are Question Answering Portal"},
+                {
+                    "role": "user",
+                    "content": f"Given Context: {context} Give the best full answer amongst the option to question {question}",
+                },
+            ],
+            temperature=0,
+        )
+
+        return response.choices[0].message.content.strip()
+
+    @retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6))
+    def answer_question(self, context, question, max_tokens=150, stop_sequence=None):
+
+        try:
+            return self._attempt_answer_question(
+                context, question, max_tokens=max_tokens, stop_sequence=stop_sequence
+            )
+        except Exception as e:
+            print(e)
+            return e
+
+
+class Local_Qwen2_5_14B_QAModel(BaseQAModel):
+    def __init__(self, model="qwen2.5-14b-instruct"):
+        self.model = model
+        # self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"],base_url=os.environ["OPENAI_BASE_URL"])
+                
+
+    @retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6))
+    def answer_question(self, context=None, question=None, user_prompt=None, max_tokens=150, stop_sequence=None):
+        url = f"https://c5d5f3fc8969.ngrok-free.app/v1/chat/completions"
+        headers = {"Content-Type": "application/json",
+                #    "Connection": "close",
+                }
+        if user_prompt==None:
+            user_prompt=f"using the folloing information {context}. Answer the following question in less than 5-7 words, if possible: {question}."
+            
+        messages=[
+            {
+                "role": "system", 
+                "content": "You are Question Answering Portal"},
+            {
+                "role": "user",
+                "content": f"{user_prompt}",
+            },
+        ] 
+        
+        data = {
+            "model": "Qwen/Qwen2.5-14B-Instruct",
+            "messages": messages,
+            "temperature":0,
+            "max_tokens":1024,
+        }
+        try:
+            response = requests.post(url, headers=headers, data=json.dumps(data))
+            response.raise_for_status()       
+            # print(response.json()["choices"][0]["message"])
+            return response.json()["choices"][0]["message"]["content"]
+        except Exception as e:
+            print(e)
+            exit()
+            return e
+
+
+
+# ========================= Discarded =========================
 class GPT3QAModel(BaseQAModel):
     def __init__(self, model="text-davinci-003"):
         """
@@ -58,7 +143,6 @@ class GPT3QAModel(BaseQAModel):
         except Exception as e:
             print(e)
             return ""
-
 
 class GPT3TurboQAModel(BaseQAModel):
     def __init__(self, model="gpt-3.5-turbo"):
@@ -111,7 +195,6 @@ class GPT3TurboQAModel(BaseQAModel):
             print(e)
             return e
 
-
 class GPT4QAModel(BaseQAModel):
     def __init__(self, model="gpt-4"):
         """
@@ -162,61 +245,6 @@ class GPT4QAModel(BaseQAModel):
         except Exception as e:
             print(e)
             return e
-
-
-
-class GPT4ominiQAModel(BaseQAModel):
-    def __init__(self, model="gpt-4o-mini"):
-        """
-        Initializes the GPT-3 model with the specified model version.
-
-        Args:
-            model (str, optional): The GPT-3 model version to use for generating summaries. Defaults to "text-davinci-003".
-        """
-        self.model = model
-        self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"],base_url=os.environ["OPENAI_BASE_URL"])
-
-    @retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6))
-    def _attempt_answer_question(
-        self, context, question, max_tokens=150, stop_sequence=None
-    ):
-        """
-        Generates a summary of the given context using the GPT-3 model.
-
-        Args:
-            context (str): The text to summarize.
-            max_tokens (int, optional): The maximum number of tokens in the generated summary. Defaults to 150.
-            stop_sequence (str, optional): The sequence at which to stop summarization. Defaults to None.
-
-        Returns:
-            str: The generated summary.
-        """
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": "You are Question Answering Portal"},
-                {
-                    "role": "user",
-                    "content": f"Given Context: {context} Give the best full answer amongst the option to question {question}",
-                },
-            ],
-            temperature=0,
-        )
-
-        return response.choices[0].message.content.strip()
-
-    @retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6))
-    def answer_question(self, context, question, max_tokens=150, stop_sequence=None):
-
-        try:
-            return self._attempt_answer_question(
-                context, question, max_tokens=max_tokens, stop_sequence=stop_sequence
-            )
-        except Exception as e:
-            print(e)
-            return e
-
-
 
 class UnifiedQAModel(BaseQAModel):
     def __init__(self, model_name="allenai/unifiedqa-v2-t5-3b-1363200"):

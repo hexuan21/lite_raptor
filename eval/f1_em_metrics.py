@@ -60,10 +60,12 @@ def normalize_text(s: str) -> str:
     return s
 
 
-def exact_match_score(res_path) -> float:
-    res_list=json.load(open(res_path,"r"))
-    gold_answers,model_answers=[x["ref_answer"] for x in res_list],[x["model_answer"] for x in res_list]
-    
+def exact_match_score(gold_answers=None,model_answers=None,res_path=None) -> float:
+    if None in [gold_answers,model_answers]:
+        res_list=json.load(open(res_path,"r"))
+        gold_answers=[x['ref_ans'] for x in res_list]
+        model_answers=[x['model_ans'] for x in res_list]
+        
     assert len(gold_answers) == len(model_answers)
 
     total = len(gold_answers)
@@ -82,10 +84,11 @@ def exact_match_score(res_path) -> float:
     return round(score, 4)
 
 
-def f1_score(res_path) -> float:
-    res_list=json.load(open(res_path,"r"))
-    gold_answers,model_answers=[x["ref_answer"] for x in res_list],[x["model_answer"] for x in res_list]
-    
+def f1_score(gold_answers=None,model_answers=None,res_path=None) -> float:    
+    if None in [gold_answers,model_answers]:
+        res_list=json.load(open(res_path,"r"))
+        gold_answers=[x['ref_ans'] for x in res_list]
+        model_answers=[x['model_ans'] for x in res_list]
     assert len(gold_answers) == len(model_answers)
 
     total = len(gold_answers)
@@ -128,7 +131,6 @@ def f1_score(res_path) -> float:
     score = f1_sum / total
     print(f"F1 Score:", round(score, 4))
     return round(score, 4)
-
     
     
 if __name__ == "__main__":
@@ -141,16 +143,19 @@ if __name__ == "__main__":
     # res_path=f"{res_dir}/hotpotqa_res_root_only_start3_1layers.json"
     res_path=f"{res_dir}/hotpotqa_res_leaf_only_start0_1layers.json"
     # res_path=f"{res_dir}/hotpotqa_res_hier_start3_4layers.json"
-    exact_match_score(res_path)
-    f1_score(res_path)
+    exact_match_score(res_path=res_path)
+    f1_score(res_path=res_path)
+    
     
     # use_azure=0
     # judge_model_name="gpt-4o-mini"
     # res_path=f"{res_dir}/hotpotqa_gpt-4o.json"
     # llm_acc_check(udge_model_name,res_path,use_azure,)
     
+    # qa_model: gpt-4p-mini
+    # embedding_model: text-embedding-3-small
     # method              em     f1
-    # gpt-4o-mini         20.30  33.01
+    # base qa_model       20.30  33.01
     # bm25                35.90  48.90
     # dpr                 36.20  50.45
     # raptor (collapsed)  33.60  51.13
