@@ -2,3 +2,4 @@ assets/demo
 assets/demo/*
 raptor/__*
 **/hotpotqa_tree*
+eval/*.sh

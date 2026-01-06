@@ -1,7 +1,7 @@
 import json
 import os
 from tqdm import tqdm
-from utils import _llm_azure_api,_llm_openrouter_api,MAX_TRY
+from utils import _llm_openrouter_api,QA_MAX_TRY
 import numpy as np
 import string
 
@@ -22,16 +22,13 @@ def llm_acc_check(judge_model_name,res_path,use_azure,):
         
         try_counts=0
         while True:
-            if try_counts>=MAX_TRY:
+            if try_counts>=QA_MAX_TRY:
                 break
-            if use_azure:
-                res=_llm_azure_api(prompt,judge_model_name)
-            else:
-                res=_llm_openrouter_api(prompt,judge_model_name)
+            res=_llm_openrouter_api(prompt,judge_model_name)
             try_counts+=1
             if len(res)>0:
                 break
-            print(f"trying again, {try_counts}-try (max:{MAX_TRY} times)")
+            print(f"trying again, {try_counts}-try (max:{QA_MAX_TRY} times)")
             
         judge_list.append({
             "id":id,
@@ -49,10 +46,6 @@ def llm_acc_check(judge_model_name,res_path,use_azure,):
         json.dump(judge_list,f,indent=4)
 
 
-
-
-
-
 def normalize_text(s: str) -> str:
     s = s.lower()
     s = "".join(ch for ch in s if ch not in string.punctuation)
@@ -60,11 +53,7 @@ def normalize_text(s: str) -> str:
     return s
 
 
-def exact_match_score(gold_answers=None,model_answers=None,res_path=None) -> float:
-    if None in [gold_answers,model_answers]:
-        res_list=json.load(open(res_path,"r"))
-        gold_answers=[x['ref_ans'] for x in res_list]
-        model_answers=[x['model_ans'] for x in res_list]
+def _exact_match(gold_answers=None,model_answers=None,res_path=None) -> float:
         
     assert len(gold_answers) == len(model_answers)
 
@@ -80,15 +69,11 @@ def exact_match_score(gold_answers=None,model_answers=None,res_path=None) -> flo
             em_count += 1
 
     score = em_count / total
-    print(f"Exact Match:", round(score, 4))
+    # print(f"Exact Match:", round(score, 4))
     return round(score, 4)
 
 
-def f1_score(gold_answers=None,model_answers=None,res_path=None) -> float:    
-    if None in [gold_answers,model_answers]:
-        res_list=json.load(open(res_path,"r"))
-        gold_answers=[x['ref_ans'] for x in res_list]
-        model_answers=[x['model_ans'] for x in res_list]
+def _f1_score(gold_answers=None,model_answers=None,res_path=None) -> float:    
     assert len(gold_answers) == len(model_answers)
 
     total = len(gold_answers)
@@ -129,30 +114,39 @@ def f1_score(gold_answers=None,model_answers=None,res_path=None) -> float:
         f1_sum += f1_single(ref, pred)
 
     score = f1_sum / total
-    print(f"F1 Score:", round(score, 4))
+    # print(f"F1 Score:", round(score, 4))
     return round(score, 4)
     
-    
+def eval(res_path):
+    res_list=json.load(open(res_path,"r"))
+    if "ref_answer" in res_list[0] and "model_answer" in res_list[0]:
+        gold_answers,predicted_answers=[x["ref_answer"] for x in res_list],[x["model_answer"] for x in res_list]
+    if "gold" in res_list[0] and "pred" in res_list[0]:
+        gold_answers,predicted_answers=[x["gold"] for x in res_list],[x["pred"] for x in res_list]
+    em_score=_exact_match(gold_answers,predicted_answers)
+    f1_score=_f1_score(gold_answers,predicted_answers)
+    print(f"\"em\": {em_score},")
+    print(f"\"f1\": {f1_score},")
+
 if __name__ == "__main__":
     res_dir="eval/res"
     
     # res_path=f"{res_dir}/hotpotqa_res_bsline_llm_gpt-4o-mini_wo_ctx.json"
     # res_path=f"{res_dir}/hotpotqa_res_bsline_dpr.json"
     # res_path=f"{res_dir}/hotpotqa_res_bsline_bm25.json"
-    # res_path=f"{res_dir}/hotpotqa_res.json"
+    res_path=f"{res_dir}/hotpotqa_res.json"
     # res_path=f"{res_dir}/hotpotqa_res_root_only_start3_1layers.json"
-    res_path=f"{res_dir}/hotpotqa_res_leaf_only_start0_1layers.json"
+    # res_path=f"{res_dir}/hotpotqa_res_leaf_only_start0_1layers.json"
     # res_path=f"{res_dir}/hotpotqa_res_hier_start3_4layers.json"
-    exact_match_score(res_path=res_path)
-    f1_score(res_path=res_path)
+        
+    eval(res_path)
     
     
-    # use_azure=0
     # judge_model_name="gpt-4o-mini"
     # res_path=f"{res_dir}/hotpotqa_gpt-4o.json"
-    # llm_acc_check(udge_model_name,res_path,use_azure,)
+    # llm_acc_check(udge_model_name,res_path,)
     
-    # qa_model: gpt-4p-mini
+    # qa_model: gpt-4o-mini
     # embedding_model: text-embedding-3-small
     # method              em     f1
     # base qa_model       20.30  33.01

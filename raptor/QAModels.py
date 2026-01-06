@@ -12,6 +12,9 @@ from tenacity import retry, stop_after_attempt, wait_random_exponential
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 
+MAX_TRY = 3
+import time
+
 class BaseQAModel(ABC):
     @abstractmethod
     def answer_question(self, context, question):
@@ -59,18 +62,18 @@ class OpenRouter_QAModel(BaseQAModel):
             return e
 
 
-class Local_Qwen2_5_14B_QAModel(BaseQAModel):
-    def __init__(self, model="qwen2.5-14b-instruct"):
+class Local_Qwen2_5_32B_QAModel(BaseQAModel):
+    def __init__(self, model="CalamitousFelicitousness/Qwen2.5-32B-Instruct-fp8-dynamic"):
         self.model = model
-        # self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"],base_url=os.environ["OPENAI_BASE_URL"])
+        VLLM_QWEN_API_KEY = os.environ["VLLM_QWEN_API_KEY"]
+        self.client = OpenAI(
+            base_url="https://plugmem.ngrok-free.app/v1",
+            api_key=VLLM_QWEN_API_KEY,
+        )
                 
 
     @retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6))
     def answer_question(self, context=None, question=None, user_prompt=None, max_tokens=150, stop_sequence=None):
-        url = f"https://c5d5f3fc8969.ngrok-free.app/v1/chat/completions"
-        headers = {"Content-Type": "application/json",
-                #    "Connection": "close",
-                }
         if user_prompt==None:
             user_prompt=f"using the folloing information {context}. Answer the following question in less than 5-7 words, if possible: {question}."
             
@@ -83,23 +86,26 @@ class Local_Qwen2_5_14B_QAModel(BaseQAModel):
                 "content": f"{user_prompt}",
             },
         ] 
-        
-        data = {
-            "model": "Qwen/Qwen2.5-14B-Instruct",
-            "messages": messages,
-            "temperature":0,
-            "max_tokens":1024,
-        }
-        try:
-            response = requests.post(url, headers=headers, data=json.dumps(data))
-            response.raise_for_status()       
-            # print(response.json()["choices"][0]["message"])
-            return response.json()["choices"][0]["message"]["content"]
-        except Exception as e:
-            print(e)
-            exit()
-            return e
+        for attempt in range(1, MAX_TRY + 1):
+            try:
+                response = self.client.chat.completions.create(
+                    model="CalamitousFelicitousness/Qwen2.5-32B-Instruct-fp8-dynamic",
+                    messages=messages,
+                )    
+                return response.choices[0].message.content
 
+            except ImportError:
+                print("Need to install openai library: pip install openai")
+
+            except Exception as e:
+                print(f"[Attempt {attempt}/{MAX_TRY}]. Error: {e}")
+
+            time.sleep(5)
+        return  ""
+    
+    
+    
+    
 
 
 # ========================= Discarded =========================

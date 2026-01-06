@@ -1,0 +1,602 @@
+[
+    {
+        "id": "5abe953b5542993f32c2a170",
+        "question": "what is one of the stars of  The Newcomers known for",
+        "ref_answer": "superhero roles as the Marvel Comics",
+        "model_answer": "Christopher McCoy"
+    },
+    {
+        "id": "5ab69f9a554299710c8d1ef8",
+        "question": "The fictional private detective that appears in \"The Adventure of the Seven Clocks\" what written by whom?",
+        "ref_answer": "Sir Arthur Conan Doyle",
+        "model_answer": "Adrian Conan Doyle and John Dickson Carr"
+    },
+    {
+        "id": "5abc030e554299642a094bdc",
+        "question": "The Distribution of Industry act was passed by a man who was prime minister when? ",
+        "ref_answer": "1945 to 1951",
+        "model_answer": "1945"
+    },
+    {
+        "id": "5ae6c2285542995703ce8b9a",
+        "question": "Sparking the Marian civil war, who helped the recently abdicated queen to escape her imprisonment?",
+        "ref_answer": "the Queen's gaoler",
+        "model_answer": "her gaoler's family"
+    },
+    {
+        "id": "5ab57fc4554299488d4d99c0",
+        "question": "In which county is the town in which Raymond Robertsen was born ?",
+        "ref_answer": "Finnmark county,",
+        "model_answer": "Finnmark county"
+    },
+    {
+        "id": "5ade9c9c5542997c77adee8c",
+        "question": "What screenplay was worked on by both Edward Carfagno and Miklos Rozsa?",
+        "ref_answer": "Julius Caesar",
+        "model_answer": "Julius Caesar (1953)"
+    },
+    {
+        "id": "5a749af055429979e28829b7",
+        "question": "Which Walt Disney film was produced first, The Apple Dumpling Gang or Something Wicked This Way Comes?",
+        "ref_answer": "The Apple Dumpling Gang",
+        "model_answer": "The Apple Dumpling Gang"
+    },
+    {
+        "id": "5ae1389655429901ffe4ae05",
+        "question": "Bethpage State Parkway begins with an interchange at which Long Island-based limited access highway?",
+        "ref_answer": "Southern State Parkway",
+        "model_answer": "Southern and Heckscher state parkways"
+    },
+    {
+        "id": "5adcd4325542994d58a2f6ed",
+        "question": "Are Colocasia and Coronilla both flowering plants?",
+        "ref_answer": "yes",
+        "model_answer": "Yes"
+    },
+    {
+        "id": "5a85c3225542992a431d1b95",
+        "question": "The 2000 ICC KnockOut Trophy was the debut of a Jamaican cricketer who is a right-handed what?",
+        "ref_answer": "middle order batsman",
+        "model_answer": "middle-order batsman"
+    },
+    {
+        "id": "5ab94bc2554299743d22eacf",
+        "question": "Bytham Castle is a castle in the civil parish of how many houses?",
+        "ref_answer": "300",
+        "model_answer": "around 300 houses"
+    },
+    {
+        "id": "5ae1f17e554299234fd04349",
+        "question": "Which is located in Cornwall, Southwell Minster or Truro Cathedral?",
+        "ref_answer": "The Cathedral of the Blessed Virgin Mary, Truro",
+        "model_answer": "Truro Cathedral"
+    },
+    {
+        "id": "5ab3cecd5542992ade7c6eae",
+        "question": "How do the Peter Laufer books Forbidden Creatures and No Animals Were Harmed differ in their focus on animals?",
+        "ref_answer": "his own opinions changed",
+        "model_answer": "Forbidden Creatures focuses on animal smuggling and exotic pets, while No Animals Were Harmed explores the line between using animals for entertainment and abuse."
+    },
+    {
+        "id": "5a8835dc5542994846c1ce2b",
+        "question": "Who is a winner of the 2013 6 Hours of Silverstone a co-commentator for?",
+        "ref_answer": "BBC Formula One",
+        "model_answer": "BBC Formula One coverage"
+    },
+    {
+        "id": "5a714dea5542994082a3e7a9",
+        "question": "Which 2009 animated film is from Japan, Summer Wars or The Secret of Kells?",
+        "ref_answer": "Summer Wars",
+        "model_answer": "Summer Wars"
+    },
+    {
+        "id": "5a8481945542997175ce1ed3",
+        "question": "Are Steve Perry and Leslie West both singers?",
+        "ref_answer": "yes",
+        "model_answer": "Yes"
+    },
+    {
+        "id": "5a84574455429933447460e6",
+        "question": "In what year was the Golden State NBA player, who was part of the Cavaliers-Warriors rivalry, named NBA Finals Most Valuable Player?",
+        "ref_answer": "2015",
+        "model_answer": "2015"
+    },
+    {
+        "id": "5a72b2dc5542992359bc3173",
+        "question": "What is the name of the actor who wrote the memoir Without you: A memoir of love, loss, and the Musical Rent and also stared as Mark Cohen in the Broadway production of \"Rent\"?",
+        "ref_answer": "Anthony Rapp",
+        "model_answer": "Anthony Rapp"
+    },
+    {
+        "id": "5a7a3a945542996a35c17147",
+        "question": "One Raffles Place is one of the tallest skyscrapers in the city of Singapore and tallest in the wolrd outside North America until it was succeeded by a Building in city?",
+        "ref_answer": "Hong Kong",
+        "model_answer": "Bank of China Tower, Hong Kong"
+    },
+    {
+        "id": "5ade86b255429939a52fe8e0",
+        "question": "Where is the ice hockey team based that Zdeno Ch\u00e1ra currently serving as captain of?",
+        "ref_answer": "Boston, Massachusetts",
+        "model_answer": "Boston, Massachusetts"
+    },
+    {
+        "id": "5a8f5b6f554299458435d5e7",
+        "question": "Sand Mountainis part of the southern tip of a mountain chain in which part of North America ?",
+        "ref_answer": "eastern North America",
+        "model_answer": "Appalachian Mountains"
+    },
+    {
+        "id": "5ae40d405542996836b02c28",
+        "question": "At what intersection was the former home of the wooden roller coaster now located at Six Flags Great America in Gurnee, Illinois located?",
+        "ref_answer": "North Avenue and First Avenue",
+        "model_answer": "North Avenue and First Avenue"
+    },
+    {
+        "id": "5a72334755429971e9dc934c",
+        "question": "\"Heartbreak Hurricane\" was recorded by which country artist, that also goes by the name Ricky Skaggs?",
+        "ref_answer": "Rickie Lee Skaggs",
+        "model_answer": "Ricky Skaggs"
+    },
+    {
+        "id": "5ab8829d55429934fafe6e08",
+        "question": "The View from the Bottom is the fifth studio album by an American rock band best known for what hit song?",
+        "ref_answer": "My Own Worst Enemy",
+        "model_answer": "\"My Own Worst Enemy\""
+    },
+    {
+        "id": "5a7b1c0a55429931da12c9c9",
+        "question": "This Experts Network sports analysts was inducted into the Pro Football Hall of Fame in 2000 and played in the NFL for how many seasons?",
+        "ref_answer": "13 seasons",
+        "model_answer": "13"
+    },
+    {
+        "id": "5ae40b2b55429970de88d8b3",
+        "question": "In between  Polytechnic University of the Philippines and California Polytechnic State University which was founded as a vocational high school?",
+        "ref_answer": "California Polytechnic State University",
+        "model_answer": "California Polytechnic State University"
+    },
+    {
+        "id": "5ab29c24554299449642c932",
+        "question": "Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?",
+        "ref_answer": "yes",
+        "model_answer": "Yes"
+    },
+    {
+        "id": "5ae26fad554299495565da6f",
+        "question": "Which historical drama filmed in the Winter Palace of the Russian State Hermitage Museum stars Sergey Dreyden?",
+        "ref_answer": "Russian Ark",
+        "model_answer": "Russian Ark"
+    },
+    {
+        "id": "5a7542425542996c70cfaecc",
+        "question": "Who was born first, Karen Joy Fowler or Bruce Chatwin?",
+        "ref_answer": "Bruce Chatwin",
+        "model_answer": "Bruce Chatwin"
+    },
+    {
+        "id": "5adecc7755429975fa854f9d",
+        "question": "What WikiLeaks using whistleblower is notable for having a hacking organization with a user base of over 1,800,000?",
+        "ref_answer": "Jeremy Hammond",
+        "model_answer": "HackThisSite"
+    },
+    {
+        "id": "5abff9905542997d64295980",
+        "question": "Egremont Castle is located in what market town, civil parish, and two electoral wards in the Borough of Copeland in Cumbria, England?",
+        "ref_answer": "Egremont",
+        "model_answer": "Egremont"
+    },
+    {
+        "id": "5ab5f372554299488d4d9a60",
+        "question": "Which opera has more acts, La jolie fille de Perth or Mitridate, re di Ponto?",
+        "ref_answer": "La jolie fille de Perth \"(The Fair Maid of Perth)\" is an opera in four acts",
+        "model_answer": "La jolie fille de Perth"
+    },
+    {
+        "id": "5a7558425542992db9473647",
+        "question": "What subsidiary of the largest airline of the Republic of China (Taiwan) has a main hub at Taichung Airport?",
+        "ref_answer": "Mandarin Airlines",
+        "model_answer": "Mandarin Airlines"
+    },
+    {
+        "id": "5a72f45a5542992359bc31e6",
+        "question": "What is the name of the former MGM Grand Garden Special Events Center where the Mayweather-Ortiz fight took place?",
+        "ref_answer": "MGM Grand Garden Arena",
+        "model_answer": "MGM Grand Garden Arena"
+    },
+    {
+        "id": "5a83411655429966c78a6b5d",
+        "question": "Who created the NBC sitcom that Johnny Pemberton appears in as the character Bo Thompson?",
+        "ref_answer": "Justin Spitzer",
+        "model_answer": "Justin Spitzer"
+    },
+    {
+        "id": "5a77aa095542995d83181260",
+        "question": "Which aircraft engine powers a General Dynamics aircraft of which over 4500 have been built?",
+        "ref_answer": "Pratt & Whitney F100",
+        "model_answer": "Pratt & Whitney F100"
+    },
+    {
+        "id": "5ae680cc5542996d980e7ba5",
+        "question": "Which British racing driver has raced for 7 different teams and won the European Grand Prix in 1999?",
+        "ref_answer": "Johnny Herbert",
+        "model_answer": "Johnny Herbert"
+    },
+    {
+        "id": "5ae4d3c95542990ba0bbb165",
+        "question": "In what city can a person find both the Nusretiye Clock Tower and the Eski Imaret Mosque be found?",
+        "ref_answer": "Istanbul, Turkey",
+        "model_answer": "Istanbul"
+    },
+    {
+        "id": "5a790d8f554299029c4b5eec",
+        "question": "Which English musician is known for both the songs \"See Yourself\" and \"Withing You Without You\"?",
+        "ref_answer": "George Harrison",
+        "model_answer": "George Harrison"
+    },
+    {
+        "id": "5a717d4c5542994082a3e854",
+        "question": "Who has written more than 300 papers, Semyon Aranovich Gershgorin or Pavel Alexandrov?",
+        "ref_answer": "Pavel Sergeyevich Alexandrov",
+        "model_answer": "Pavel Alexandrov"
+    },
+    {
+        "id": "5a77322055429972597f1494",
+        "question": "Which software application was originally made for the company that acquired RadioShack in 1963?",
+        "ref_answer": "DeskMate",
+        "model_answer": "TRS-DOS Operating System"
+    },
+    {
+        "id": "5ae163b3554299422ee99678",
+        "question": "Who wrote Bring Me Sunshine and where did they write it?",
+        "ref_answer": "Bring Me Sunshine (1994) was originally a three-part retrospective in tribute to Eric Morecambe",
+        "model_answer": "Ben Elton"
+    },
+    {
+        "id": "5a77cb335542997042120b3a",
+        "question": "What American professional Hawaiian surfer born 18 October 1992 won the Rip Curl Pro Portugal?",
+        "ref_answer": "John John Florence",
+        "model_answer": "John John Florence"
+    },
+    {
+        "id": "5ae4a0ca5542995ad6573dcb",
+        "question": "Bill Nelson flew as a Payload Specialist on a Space Shuttle launched for the first time in what year?",
+        "ref_answer": "1981",
+        "model_answer": "1981"
+    },
+    {
+        "id": "5a84e21d5542997b5ce3ff7c",
+        "question": "The actress and singer Heather Morris is best known for her role in which series, becoming a regular character in the second season?",
+        "ref_answer": "Glee",
+        "model_answer": "Glee"
+    },
+    {
+        "id": "5a797bd95542994bb9457016",
+        "question": "What age was Georgia Middleman when she started singing in the seventh-most populated city in the United States?",
+        "ref_answer": "ten",
+        "model_answer": "ten"
+    },
+    {
+        "id": "5a84973e5542992a431d1a67",
+        "question": "Stockely Webster has paintings hanging in what home (that serves as the residence for the Mayor of New York)?",
+        "ref_answer": "Gracie Mansion",
+        "model_answer": "Gracie Mansion"
+    },
+    {
+        "id": "5a7736bc554299373536021b",
+        "question": "What composer with an Italian libretto was born 4 March 1678?",
+        "ref_answer": "Antonio Lucio Vivaldi",
+        "model_answer": "Antonio Vivaldi"
+    },
+    {
+        "id": "5add7c9c5542990dbb2f7e60",
+        "question": "Ellie Parker is a 2005 American drama-comedy film whose title character is played by an English actress who made her screen debut in what Australian drama film?",
+        "ref_answer": "For Love Alone",
+        "model_answer": "For Love Alone"
+    },
+    {
+        "id": "5a7d3470554299452d57bb56",
+        "question": "A scam involving a male calling small town fast-food restaurants and pretending to be a police officer to have them strip search employees was turned into a movie of what name?",
+        "ref_answer": "Compliance",
+        "model_answer": "The Call Center"
+    },
+    {
+        "id": "5ab3a83d5542992ade7c6e08",
+        "question": "Faith Goldy got fired after an interview she gave on what production site edited by Andrew Anglin?",
+        "ref_answer": "The Daily Stormer",
+        "model_answer": "The Daily Stormer"
+    },
+    {
+        "id": "5a8a2a5555429930ff3c0ccc",
+        "question": "What is the current home arena of the NHL team Chris Summers plays for?",
+        "ref_answer": "PPG Paints Arena",
+        "model_answer": "PPG Paints Arena"
+    },
+    {
+        "id": "5ae526c455429908b6326529",
+        "question": "Where is the headquarters for the service broadcaster the show Tenko is on?",
+        "ref_answer": "Broadcasting House in London",
+        "model_answer": "London"
+    },
+    {
+        "id": "5a8031c1554299485f598585",
+        "question": "Meghan Strange is an American actress and voice actress, known for her role as Robin on what American animated television series produced for Disney Channel?",
+        "ref_answer": "Sofia the First",
+        "model_answer": "Sofia the First"
+    },
+    {
+        "id": "5ac3bd0c554299204fd21e21",
+        "question": "Sam Mendes and Ruby Yang share what profession?",
+        "ref_answer": "filmmaker.",
+        "model_answer": "filmmaker"
+    },
+    {
+        "id": "5ae7281c5542991e8301cb69",
+        "question": "The fourth episode The Simpsons' seventh season has what kind of theme?",
+        "ref_answer": "spiritual",
+        "model_answer": "Religious"
+    },
+    {
+        "id": "5abcf14f55429959677d6b5b",
+        "question": "La Machine a ecirire was written by what French writer, designer, playright, artist, and filmmaker, who is known for his novel, \"Les Enfants Terribles\"?",
+        "ref_answer": "Jean Maurice Eug\u00e8ne Cl\u00e9ment Cocteau",
+        "model_answer": "Jean Cocteau"
+    },
+    {
+        "id": "5ae0818e55429924de1b70e9",
+        "question": "Gleannt\u00e1in Ghlas' Ghaoth Dobhair is a song that can be heard in pubs licensed to serve what?",
+        "ref_answer": "alcoholic drinks",
+        "model_answer": "alcoholic drinks"
+    },
+    {
+        "id": "5adc46665542994650320cc8",
+        "question": "In what year was the composer of \"Anthem\" born?",
+        "ref_answer": "1943",
+        "model_answer": "1943"
+    },
+    {
+        "id": "5ac00278554299012d1db56b",
+        "question": "What profession do Raj Kapoor and Mike Cahill share?",
+        "ref_answer": "director",
+        "model_answer": "Film director"
+    },
+    {
+        "id": "5a7b3fc155429931da12ca3a",
+        "question": "Wexner Graduate Fellowships are given to students who show an ability of an individual to \"lead\" or guide who?",
+        "ref_answer": "other individuals, teams, or entire organizations",
+        "model_answer": "other individuals, teams, or entire organizations"
+    },
+    {
+        "id": "5ae7f0c75542994a481bbe44",
+        "question": "What is the birthdate of this Norwegian professional footballer who plays as an attacking midfielder and who broke the record for the youngest player that has ever played in the Norwegian top league?",
+        "ref_answer": "17 December 1998",
+        "model_answer": "17 December 1998"
+    },
+    {
+        "id": "5ab8854555429934fafe6e0c",
+        "question": "Works by Hanna Leena Kristiina Varis are part of a collection in a museum that houses approximately 65,000 what?",
+        "ref_answer": "drawings",
+        "model_answer": "drawings"
+    },
+    {
+        "id": "5a84fd085542994c784ddaba",
+        "question": "Devil's Food is a singles compilation by an American rock and roll band that has also been known to play country shows under what?",
+        "ref_answer": "various names",
+        "model_answer": "the Supersuckers"
+    },
+    {
+        "id": "5adc6a3b55429947ff173953",
+        "question": "What musical was inspired by the films that included Ruth Leuwerik's best known role?",
+        "ref_answer": "The Sound of Music",
+        "model_answer": "The Sound of Music"
+    },
+    {
+        "id": "5a7732dc55429972597f149b",
+        "question": "What 1944 Bollywood film was the mother of Bollywood actor Govinda in?",
+        "ref_answer": "Geet or The Song",
+        "model_answer": "Dost"
+    },
+    {
+        "id": "5ac3ce74554299204fd21e71",
+        "question": "How many episodes were in the original run of the HBO show that Kristin Davis played the character Charlotte York Goldenblatt?",
+        "ref_answer": "94",
+        "model_answer": "94"
+    },
+    {
+        "id": "5a8cee9b554299441c6b9f87",
+        "question": "Haier has North American rights to which appliance company headquartered in Louisville, Kentucky?",
+        "ref_answer": "GE Appliances",
+        "model_answer": "GE Appliances"
+    },
+    {
+        "id": "5ae7ff745542994a481bbe6e",
+        "question": "When was the track from which a sample was featured in \"Take Me to the Clouds Above\" released? ",
+        "ref_answer": "16 March 1987",
+        "model_answer": "1987"
+    },
+    {
+        "id": "5a88a1bb5542997e5c09a64c",
+        "question": "Who directed a 2006 film where Ron Perkins character plays the manager of a hotel?",
+        "ref_answer": "Christopher Nolan",
+        "model_answer": "Christopher Nolan"
+    },
+    {
+        "id": "5a88f7bf5542997e5c09a6dd",
+        "question": "What movie did Chris Duesterdiek work on that was directed by Seth Rogen and Evan Goldberg?",
+        "ref_answer": "The Interview",
+        "model_answer": "The Interview"
+    },
+    {
+        "id": "5ab545d3554299494045ef5c",
+        "question": "The producer of \"Live By NIght\" began his film career playing what role in \"Critters 3\"?",
+        "ref_answer": "Josh",
+        "model_answer": "Josh"
+    },
+    {
+        "id": "5a8e41735542995085b37406",
+        "question": "What is the county seat of the county in which Keokuk Falls, Oklahoma is loated?",
+        "ref_answer": "Shawnee",
+        "model_answer": "Shawnee, Oklahoma"
+    },
+    {
+        "id": "5a85df525542994c784ddb9f",
+        "question": "What former president of ABC television is a high ranking officer in the same company as Christine Mccarthy?",
+        "ref_answer": "Robert A. Iger",
+        "model_answer": "Bob Iger"
+    },
+    {
+        "id": "5a86b13f55429960ec39b6c3",
+        "question": "Where was the second World Junior Ice Hockey Championship in which Miroslav P\u0159erost coached the men's national junior ice hockey team hosted?",
+        "ref_answer": "Ufa, Russia",
+        "model_answer": "2013 World Junior Ice Hockey Championships"
+    },
+    {
+        "id": "5a78d35e55429974737f78c3",
+        "question": "Between two bands Audioslave and Bodyjar, which group formed earlier?",
+        "ref_answer": "Bodyjar",
+        "model_answer": "Bodyjar"
+    },
+    {
+        "id": "5a8b45765542995d1e6f1333",
+        "question": "What music school did the singer of The Search for Everything: Wave One attend?",
+        "ref_answer": "Berklee College of Music",
+        "model_answer": "Berklee College of Music"
+    },
+    {
+        "id": "5ade56ed5542997c77adee04",
+        "question": "G\u00e9rald Genta, a Swiss jewelllery designer, worked with what luxury Swiss watch manufacturer which was founded by American Watch,aker Florentine Ariosts Jones?",
+        "ref_answer": "International Watch Co.",
+        "model_answer": "IWC"
+    },
+    {
+        "id": "5ab3b42c5542992ade7c6e4f",
+        "question": "What city did the musician whose debut album shares its title with the 1959 Alfred Hitchcock hail from?",
+        "ref_answer": "Chicago, IL",
+        "model_answer": "Chicago, IL"
+    },
+    {
+        "id": "5ae7535c5542997b22f6a6d8",
+        "question": "The 53rd National Hockey League All-Star Game took place at the indoor arena that was completed in what year?",
+        "ref_answer": "1998",
+        "model_answer": "1998"
+    },
+    {
+        "id": "5a7b88b45542997c3ec97201",
+        "question": "Which of Damon Stoudamire's cousins once played college basketball for the University of Kentucky?",
+        "ref_answer": "Terrence Jones",
+        "model_answer": "Terrence Jones"
+    },
+    {
+        "id": "5ae6fee3554299572ea54670",
+        "question": "The player who defeated Johnny Majors for the Heisman Trophy in 1956 was born in what year?",
+        "ref_answer": "1935",
+        "model_answer": "1936"
+    },
+    {
+        "id": "5ab3bcc55542992ade7c6e66",
+        "question": "In which election did Norm Coleman won to become the last republican elected as of 2017?",
+        "ref_answer": "2002",
+        "model_answer": "2002"
+    },
+    {
+        "id": "5a7f33115542992e7d278c84",
+        "question": "Who is the mother of Mary, Crown Princess of Denmark's husband?",
+        "ref_answer": "Queen Margrethe II",
+        "model_answer": "Queen Margrethe II"
+    },
+    {
+        "id": "5ae7793c554299540e5a55c2",
+        "question": "What park replaced American's first waterpark designed by the creator of seaworld?",
+        "ref_answer": "Krakatau",
+        "model_answer": "Universal's Volcano Bay"
+    },
+    {
+        "id": "5ae1d32a554299492dc91b9c",
+        "question": "What year did Fifty Shades of Grey release?",
+        "ref_answer": "2011",
+        "model_answer": "2011"
+    },
+    {
+        "id": "5ae12aa6554299422ee99617",
+        "question": "The ghetto that George Kadish documented held how many people at its peak?",
+        "ref_answer": "29,000",
+        "model_answer": "29,000 people"
+    },
+    {
+        "id": "5ae0ce4e554299603e41845f",
+        "question": "In which poetic form is Mad Girl's Love Song written and appears in the novel The Bell Jar by Sylvia Plath?",
+        "ref_answer": "the villanelle poetic form",
+        "model_answer": "villanelle"
+    },
+    {
+        "id": "5a73987c55429978a71e9039",
+        "question": "Which production company was involved with both of the movies A Kid in King Arthur's Court and The Great Locomotive Chase?",
+        "ref_answer": "Walt Disney Productions",
+        "model_answer": "Walt Disney Productions"
+    },
+    {
+        "id": "5adcdf455542994ed6169c11",
+        "question": "What where both Hawker Hurricane and No. 1455 Flight apart of?",
+        "ref_answer": "Royal Air Force",
+        "model_answer": "Royal Air Force (RAF)"
+    },
+    {
+        "id": "5a8a48ee55429930ff3c0d66",
+        "question": "Kadeem Jack is a player in a league that started with how many teams?",
+        "ref_answer": "eight",
+        "model_answer": "8"
+    },
+    {
+        "id": "5a8efb5a55429918e830d172",
+        "question": "What country is the member of Gujarat Legislative Assembly and parliament representing?",
+        "ref_answer": "Jamnagar",
+        "model_answer": "India"
+    },
+    {
+        "id": "5a72a6d855429901807daf27",
+        "question": "Of four Harry S. Truman Supreme Court candidates, who was the 53rd United States Secretary of the Treasury and the 13th Chief Justice of the United States?",
+        "ref_answer": "Fred M. Vinson",
+        "model_answer": "Fred M. Vinson"
+    },
+    {
+        "id": "5ae791ef55429952e35ea979",
+        "question": "In what month was the relief first officer of the flight that crashed on its way to Cairo with a stop in New York Born?",
+        "ref_answer": "February",
+        "model_answer": "February"
+    },
+    {
+        "id": "5ac3b4e0554299741d48a2ec",
+        "question": "Are The Datsuns and The Black Crowes both rock bands?",
+        "ref_answer": "yes",
+        "model_answer": "Yes"
+    },
+    {
+        "id": "5ab55a9b5542992aa134a2ba",
+        "question": " Legends of the Fall was based on a novella by what poetry and fiction writer?",
+        "ref_answer": "James Harrison",
+        "model_answer": "Jim Harrison"
+    },
+    {
+        "id": "5a79fc8b5542994f819ef114",
+        "question": "Rimo I and Passu Sar are both part of which mountain range?",
+        "ref_answer": "Karakoram mountain range",
+        "model_answer": "Karakoram mountain range"
+    },
+    {
+        "id": "5abdb4a755429965af743df0",
+        "question": "What was the country which has border with the village where an Austrian forest caretaker, naturalist, pseudoscientistref>Ronald Engert: \"Die Forellenturbine als Prinzip der kostenlosen Energiegewinnung born?",
+        "ref_answer": "Czech Republic",
+        "model_answer": "Czech Republic"
+    },
+    {
+        "id": "5ae604ec5542996de7b71af9",
+        "question": "Which team did Joe Buck's father broadcast for?",
+        "ref_answer": "St. Louis Cardinals",
+        "model_answer": "St. Louis Cardinals"
+    },
+    {
+        "id": "5a857cf35542994c784ddb1d",
+        "question": "What is the name of the city located near the historical region known as Margian\u1e17 in Greek?",
+        "ref_answer": "Mary",
+        "model_answer": "Merv"
+    }
+]
